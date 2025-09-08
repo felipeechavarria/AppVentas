@@ -7,13 +7,18 @@ import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import java.util.concurrent.Executors
 import kotlinx.coroutines.runBlocking
+import androidx.room.TypeConverters
 
-@Database(entities = [Producto::class, User::class, InventoryItem::class], version = 5, exportSchema = false)
+@Database(entities = [Producto::class, User::class, InventoryItem::class, Cliente::class, Venta::class, VentaItem::class, Abono::class], version = 9, exportSchema = false)
+@TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun productoDao(): ProductoDao
     abstract fun userDao(): UserDao
     abstract fun inventoryDao(): InventoryDao
+    abstract fun clienteDao(): ClienteDao
+    abstract fun ventaDao(): VentaDao
+    abstract fun abonoDao(): AbonoDao
 
     companion object {
         @Volatile
@@ -27,7 +32,7 @@ abstract class AppDatabase : RoomDatabase() {
                     "app_database"
                 )
                     .fallbackToDestructiveMigration()
-                    .addCallback(databaseCallback(context)) // <-- LÍNEA NUEVA
+                    .addCallback(databaseCallback(context))
                     .build()
                 INSTANCE = instance
                 instance

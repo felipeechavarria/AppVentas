@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/tvReceiptHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Recibo de Venta"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="10dp"/>
+    <TextView
+        android:id="@+id/tvReceiptSaleId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Venta N°: 123"
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/tvReceiptClientName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cliente: Nombre del Cliente"
+        android:textColor="@android:color/black"/>
+    <TextView
+        android:id="@+id/tvReceiptSaleDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha de Venta: 08/09/2025"
+        android:textColor="@android:color/black"/>
+    <TextView
+        android:id="@+id/tvReceiptPaymentDueDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha Pactada de Pago: 15/09/2025"
+        android:textColor="@android:color/black"
+        android:visibility="gone"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#666"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="Producto" android:textStyle="bold" android:textColor="@android:color/black"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Cant." android:gravity="center" android:textStyle="bold" android:textColor="@android:color/black"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="Precio" android:gravity="end" android:textStyle="bold" android:textColor="@android:color/black"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="Subtotal" android:gravity="end" android:textStyle="bold" android:textColor="@android:color/black"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llReceiptItems"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#666"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/tvReceiptTotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="Total Venta: $0.00"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/tvReceiptPaid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="Total Abonado: $0.00"
+        android:textColor="@android:color/black"/>
+    <TextView
+        android:id="@+id/tvReceiptBalance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="Saldo Pendiente: $0.00"
+        android:textColor="@android:color/holo_red_dark"
+        android:textStyle="bold"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="¡Gracias por su compra!"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:textColor="@android:color/darker_gray"/>
+
+</LinearLayout>

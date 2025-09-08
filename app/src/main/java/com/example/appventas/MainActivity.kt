@@ -68,20 +68,38 @@ class MainActivity : AppCompatActivity() {
         val formAddProduct = findViewById<LinearLayout>(R.id.formAddProduct)
         val btnAddUser = findViewById<Button>(R.id.btnAddUser)
         val btnChangePassword = findViewById<Button>(R.id.btnChangePassword)
+        val btnManageClients = findViewById<Button>(R.id.btnManageClients)
+        val btnRegisterSale = findViewById<Button>(R.id.btnRegisterSale)
 
         btnChangePassword.setOnClickListener {
             val intent = Intent(this, ChangePasswordActivity::class.java)
-            intent.putExtra("USER_ID", userId) // Le enviamos el ID del usuario actual
+            intent.putExtra("USER_ID", userId)
             startActivity(intent)
         }
 
         if (userRole == "Supervisor") {
             formAddProduct.visibility = View.VISIBLE
             btnAddUser.visibility = View.VISIBLE
+            btnManageClients.visibility = View.GONE
+            btnRegisterSale.visibility = View.GONE
             setupSupervisorButtons()
-        } else {
+        } else { // Vendedor
             formAddProduct.visibility = View.GONE
             btnAddUser.visibility = View.GONE
+            btnManageClients.visibility = View.VISIBLE
+            btnRegisterSale.visibility = View.VISIBLE
+
+            // Lógica del botón para el Vendedor
+            btnManageClients.setOnClickListener {
+                val intent = Intent(this, ClientsActivity::class.java)
+                intent.putExtra("SELLER_ID", userId)
+                startActivity(intent)
+            }
+            btnRegisterSale.setOnClickListener {
+                val intent = Intent(this, SalesActivity::class.java)
+                intent.putExtra("SELLER_ID", userId)
+                startActivity(intent)
+            }
         }
     }
 

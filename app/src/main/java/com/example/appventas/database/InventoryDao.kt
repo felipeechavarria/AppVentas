@@ -28,4 +28,10 @@ interface InventoryDao {
 
     @Update
     suspend fun update(item: InventoryItem)
+
+    @Query("SELECT * FROM inventory_items WHERE sellerId = :sellerId AND status = 'Aceptado'")
+    fun getAcceptedInventoryForSeller(sellerId: Int): Flow<List<InventoryItem>>
+
+    @Query("SELECT * FROM inventory_items WHERE sellerId = :sellerId AND productId = :productId AND status = 'Aceptado'")
+    suspend fun findAcceptedItem(sellerId: Int, productId: Int): InventoryItem?
 }

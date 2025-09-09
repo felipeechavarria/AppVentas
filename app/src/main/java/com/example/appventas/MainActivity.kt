@@ -22,6 +22,7 @@ import com.example.appventas.database.User
 import com.example.appventas.database.InventoryItemWithProductDetails
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
     private var userId: Int = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -70,6 +72,7 @@ class MainActivity : AppCompatActivity() {
         val btnChangePassword = findViewById<Button>(R.id.btnChangePassword)
         val btnManageClients = findViewById<Button>(R.id.btnManageClients)
         val btnRegisterSale = findViewById<Button>(R.id.btnRegisterSale)
+        val btnViewDebts = findViewById<Button>(R.id.btnViewDebts)
 
         btnChangePassword.setOnClickListener {
             val intent = Intent(this, ChangePasswordActivity::class.java)
@@ -82,6 +85,13 @@ class MainActivity : AppCompatActivity() {
             btnAddUser.visibility = View.VISIBLE
             btnManageClients.visibility = View.GONE
             btnRegisterSale.visibility = View.GONE
+            btnViewDebts.visibility = View.VISIBLE
+
+            btnViewDebts.setOnClickListener {
+                val intent = Intent(this, DebtsActivity::class.java)
+                startActivity(intent)
+            }
+
             setupSupervisorButtons()
         } else { // Vendedor
             formAddProduct.visibility = View.GONE

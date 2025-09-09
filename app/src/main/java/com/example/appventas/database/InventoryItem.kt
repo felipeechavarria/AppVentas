@@ -3,6 +3,7 @@ package com.example.appventas.database
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
+import java.util.Date
 
 @Entity(
     tableName = "inventory_items",
@@ -27,5 +28,6 @@ data class InventoryItem(
     val productId: Int,
     val sellerId: Int,
     val quantity: Int,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    val status: String // Ej: "Asignado", "Aceptado", "Vendido"
+    val status: String,
+    val fechaLiquidacion: Date? = null
 )

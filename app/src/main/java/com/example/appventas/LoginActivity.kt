@@ -9,12 +9,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.appventas.database.AppDatabase
 import kotlinx.coroutines.launch
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var database: AppDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_activity)
 

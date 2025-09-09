@@ -9,7 +9,7 @@ import java.util.concurrent.Executors
 import kotlinx.coroutines.runBlocking
 import androidx.room.TypeConverters
 
-@Database(entities = [Producto::class, User::class, InventoryItem::class, Cliente::class, Venta::class, VentaItem::class, Abono::class], version = 9, exportSchema = false)
+@Database(entities = [Producto::class, User::class, InventoryItem::class, Cliente::class, Venta::class, VentaItem::class, Abono::class], version = 10, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
 

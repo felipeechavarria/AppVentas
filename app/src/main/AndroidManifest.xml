@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
+
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
 
     <application
         android:allowBackup="true"
@@ -11,11 +14,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppVentas"
+        android:theme="@style/Theme.App.Starting"
         tools:targetApi="31">
         <activity
-            android:name=".SaleDetailActivity"
+            android:name=".DebtDetailActivity"
             android:exported="false" />
+        <activity
+            android:name=".DebtsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppVentas" />
+        <activity
+            android:name=".SaleDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppVentas" />
         <activity
             android:name=".NewSaleActivity"
             android:exported="false"
@@ -29,13 +40,16 @@
         <activity
             android:name=".AddClientActivity"
             android:exported="false"
-            android:label="@string/title_activity_add_client" />
+            android:label="@string/title_activity_add_client"
+            android:theme="@style/Theme.AppVentas" />
         <activity
             android:name=".ClientsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AppVentas" />
         <activity
             android:name=".ChangePasswordActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AppVentas" />
         <activity
             android:name=".MainActivity2"
             android:exported="false"
@@ -43,10 +57,12 @@
             android:theme="@style/Theme.AppVentas" />
         <activity
             android:name=".AddUserActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AppVentas" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AppVentas" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
